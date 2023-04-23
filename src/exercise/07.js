@@ -28,15 +28,17 @@ function App() {
         add item
       </button>
       <ul>
-        {items.map(item => (
+        {items.map((item, idx) => (
           // 🐨 add a key prop to the <li> below. Set it to item.id
-          <li>
+          <li key={idx}>
             <button onClick={() => removeItem(item)}>remove</button>{' '}
-            <label htmlFor={`${item.id}-input`}>{item.value}</label>{' '}
-            <input id={`${item.id}-input`} defaultValue={item.value} />
+            <label htmlFor={`${idx}-input`}>{item.value}</label>{' '}
+            <input id={`${idx}-input`} defaultValue={item.value} />
           </li>
         ))}
       </ul>
+      <ul>
+    </ul>
     </div>
   )
 }
